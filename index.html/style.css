@@ -1,0 +1,1075 @@
+/* =========================================
+   CONFIGURAÇÕES
+========================================= */
+
+:root {
+
+    --accent: #ffffff;
+    --accent-light: #ffffff;
+
+    --background-dark: #000000;
+
+    --glass: rgb(255, 0, 0);
+
+    --border: rgba(255, 255, 255, 0.143);
+
+    --text: #ffffff;
+    --muted: #ffffff;
+
+    --radius: 20px;
+
+    --transition: 0.25s ease;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+
+    font-family: "Inter", sans-serif;
+
+    background: var(--background-dark);
+
+    color: var(--text);
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background-image:
+        url("assets/fundo.jpg");
+
+    background-position: center;
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    transform: scale(1.03);
+
+    animation: backgroundMove 16s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+
+@keyframes backgroundMove {
+
+    from {
+        transform: scale(1.03);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+
+.background-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.553) 0%,
+            rgba(2, 2, 2, 0.367) 45%,
+            rgba(0, 0, 0, 0.553) 100%
+        );
+
+
+    backdrop-filter: blur(1px);
+}
+
+
+
+
+/* =========================================
+   ENTER SCREEN
+========================================= */
+
+.enter-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(0, 0, 0, 0.125);
+
+    backdrop-filter: blur(20px);
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+.enter-screen.hidden {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+.enter-content {
+
+    text-align: center;
+}
+
+
+.enter-logo {
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid
+        rgb(255, 255, 255);
+
+    border-radius: 50%;
+
+    color: var(--accent);
+
+    font-size: 28px;
+
+    box-shadow:
+        0 0 35px
+        rgba(255, 255, 255, 0.99);
+
+    animation: enterPulse 2s infinite;
+}
+
+
+@keyframes enterPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 20px
+            rgba(254, 254, 254, 0.845);
+    }
+
+    50% {
+        box-shadow:
+            0 0 45px
+            rgb(0, 0, 0);
+    }
+}
+
+
+.enter-content h1 {
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+    font-weight: 600;
+
+    margin-left: 8px;
+}
+
+
+.enter-content p {
+
+    margin-top: 13px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+.enter-line {
+
+    width: 100px;
+
+    height: 1px;
+
+    margin: 22px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--accent),
+            transparent
+        );
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.page {
+
+    min-height: 100vh;
+
+    padding:
+        55px 20px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.profile-card {
+
+    width: min(715px, 100%);
+
+    padding:
+        38px 42px 30px;
+
+    position: relative;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(195, 195, 195, 0.097),
+            rgba(142, 142, 142, 0.198)
+        );
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    box-shadow:
+
+        0 35px 100px
+        rgba(153, 153, 153, 0.244),
+
+        inset 0 1px 0
+        rgba(0, 0, 0, 0);
+
+    text-align: center;
+
+    animation:
+        cardAppear 1s ease forwards;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.avatar-wrapper {
+
+    width: 125px;
+    height: 125px;
+
+    position: relative;
+
+    margin:
+        0 auto 18px;
+}
+
+
+.avatar {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.567);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(255, 255, 255, 0.27);
+
+    z-index: 2;
+}
+
+
+.avatar-glow {
+
+    position: absolute;
+
+    inset: -14px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(185, 130, 255, 0.3),
+            transparent 65%
+        );
+
+    filter: blur(12px);
+
+    animation:
+        avatarGlow 3s ease-in-out infinite alternate;
+}
+
+
+@keyframes avatarGlow {
+
+    from {
+        opacity: 0.45;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+}
+
+
+.online-dot {
+
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    right: 4px;
+    bottom: 7px;
+
+    background: #439f22;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        #0f0e119f;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 12px
+        rgba(155, 255, 120, 0.7);
+}
+
+
+/* =========================================
+   USERNAME
+========================================= */
+
+.username {
+
+    font-size: 31px;
+
+    letter-spacing: 8px;
+
+    margin-left: 8px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 25px
+        rgba(255, 255, 255, 0.252);
+}
+
+
+.handle {
+
+    margin-top: 6px;
+
+    font-size: 14px;
+
+    color: #ffffff;
+}
+
+
+.description {
+
+    margin-top: 12px;
+
+    color: #fefefe;
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+.links {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+    margin-top: 27px;
+}
+
+
+.link-button {
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 11px;
+
+    border:
+        1px solid
+        rgb(255, 255, 255);
+
+    border-radius: 13px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    background:
+        rgba(0, 0, 0, 0);
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.link-button:hover {
+
+    transform: translateY(-3px);
+
+    background:
+        rgba(255, 255, 255, 0.527);
+
+    border-color:
+        rgba(255, 255, 255, 0.527);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.209);
+
+    color: white;
+}
+
+
+.link-icon {
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-icon img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.link-button:hover .link-icon img {
+    transform: scale(1.12);
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin: 25px 0;
+}
+
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.17)
+        );
+}
+
+
+.divider::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.17),
+            transparent
+        );
+}
+
+
+.divider span {
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    text-shadow:
+        0 0 15px
+        var(--accent);
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    color: var(--accent-light);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 18px
+        rgba(255, 255, 255, 0.353);
+}
+
+
+/* =========================================
+   MUSIC
+========================================= */
+
+.song-name {
+
+    margin-top: 16px;
+
+    font-size: 14px;
+
+    color: #ffffff;
+}
+
+
+.player {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 16px;
+}
+
+
+.time {
+
+    min-width: 35px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+.progress-container {
+
+    position: relative;
+
+    height: 4px;
+
+    flex: 1;
+
+    background:
+        rgba(255, 255, 255, 0.123);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+.progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f70101,
+            #f80101
+        );
+
+    box-shadow:
+        0 0 12px
+        rgb(255, 0, 0);
+}
+
+
+.progress-dot {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 0%;
+
+    width: 10px;
+    height: 10px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 10px
+        rgba(253, 253, 253, 0.465);
+}
+
+
+.music-controls {
+
+    margin-top: 13px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.music-controls button {
+
+    border: 0;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+
+.music-controls button:hover {
+
+    color: rgba(255, 0, 0, 0.684);
+
+    transform: scale(1.15);
+}
+
+
+.music-controls .play-button {
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(254, 254, 254, 0.078);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.626);
+
+    color: var(--accent-light);
+
+    font-size: 12px;
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 255, 255, 0.169);
+}
+
+
+/* =========================================
+   GAMES
+========================================= */
+
+.games-grid {
+
+    margin-top: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+
+.game-card {
+
+    position: relative;
+
+    height: 94px;
+
+    overflow: hidden;
+
+    border-radius: 11px;
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.217);
+
+    background: #0000002f;
+
+    transition:
+        transform var(--transition),
+        border var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.game-card img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+.game-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 25%,
+            rgba(0, 0, 0, 0.339)
+        );
+}
+
+
+.game-card:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.015);
+
+    border-color:
+        rgba(255, 255, 255, 0.744);
+
+    box-shadow:
+        0 12px 30px
+        rgba(255, 255, 255, 0.044),
+
+        0 0 20px
+        rgba(255, 255, 255, 0.177);
+}
+
+
+.game-card:hover img {
+
+    transform: scale(1.08);
+
+    filter: brightness(1.1);
+}
+
+
+.game-overlay {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+
+    text-align: left;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: white;
+
+    text-shadow:
+        0 1px 5px black;
+}
+
+
+/* =========================================
+   VIEWS
+========================================= */
+
+.views {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+
+.eye {
+
+    color: var(--accent-light);
+
+    font-size: 17px;
+
+    margin-right: 3px;
+
+    text-shadow:
+        0 0 10px
+        rgba(255, 255, 255, 0.867);
+}
+
+
+.bottom-divider {
+
+    margin-bottom: 19px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .page {
+
+        padding:
+            25px 12px;
+    }
+
+
+    .profile-card {
+
+        padding:
+            30px 20px 25px;
+
+        border-radius: 18px;
+    }
+
+
+    .avatar-wrapper {
+
+        width: 105px;
+        height: 105px;
+    }
+
+
+    .username {
+
+        font-size: 25px;
+
+        letter-spacing: 6px;
+    }
+
+
+    .links {
+
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+
+    .link-button {
+
+        height: 48px;
+    }
+
+
+    .games-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 9px;
+    }
+
+
+    .game-card {
+
+        height: 85px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .games-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .game-card {
+
+        height: 105px;
+    }
+}
