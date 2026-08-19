@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mark — Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         FUNDO
+    ========================== -->
+
+    <div class="background"></div>
+    <div class="background-overlay"></div>
+
+
+
+    <!-- =========================
+         TELA INICIAL
+    ========================== -->
+
+    <div class="enter-screen" id="enterScreen">
+
+        <div class="enter-content">
+
+            <div class="enter-logo">
+                ✦
+            </div>
+
+            <h1>WELCOME</h1>
+
+            <p>click anywhere to enter</p>
+
+            <div class="enter-line"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main class="page">
+
+        <section class="profile-card">
+
+            <!-- Avatar -->
+
+            <div class="avatar-wrapper">
+
+                <div class="avatar-glow"></div>
+
+                <img
+                    src="assets/avatar.jpeg"
+                    class="avatar"
+                    alt="Avatar"
+                >
+
+                <div class="online-dot"></div>
+
+            </div>
+
+
+            <!-- Nome -->
+
+            <h1 class="username">
+                MARK
+            </h1>
+
+            <div class="handle">
+                @Mark01
+            </div>
+
+            <div class="description">
+                "No easy road, just a dream worth chasing and a peace worth finding."
+            </div>
+
+
+            <!-- =========================
+                 LINKS
+            ========================== -->
+
+            <div class="links">
+
+    <a
+        href="https://steamcommunity.com/profiles/76561199241811022/"
+        target="_blank"
+        class="link-button"
+    >
+        <span class="link-icon steam">
+            <img src="assets/icons/Steam_icon_logo.svg" alt="Steam">
+        </span>
+
+        <span>STEAM</span>
+    </a>
+
+
+    <a
+        href="https://discord.com/users/1358435153567023206"
+        target="_blank"
+        class="link-button"
+    >
+        <span class="link-icon discord">
+            <img src="assets/icons/discord-icon.svg" alt="Discord">
+        </span>
+
+        <span>DISCORD</span>
+    </a>
+
+
+    <a
+        href="https://open.spotify.com/user/4jlkipfoikbs7xp307uo7axrj?si=eANXbFC7Sz6X8qs8om5nkA&utm_source=copy-link"
+        target="_blank"
+        class="link-button"
+    >
+        <span class="link-icon spotify">
+            <img src="assets/icons/Spotify_icon.svg" alt="Spotify">
+        </span>
+
+        <span>SPOTIFY</span>
+    </a>
+
+</div>
+
+            
+
+
+            <!-- Separador -->
+
+            <div class="divider">
+                <span>✦</span>
+            </div>
+
+
+            <!-- =========================
+                 NOW PLAYING
+            ========================== -->
+
+            <section class="music-section">
+
+                <div class="section-title">
+                    <span class="music-note">♫</span>
+                    NOW PLAYING
+                </div>
+
+
+                <div class="song-name">
+                    
+              Escape Your Love (Dança Pop Fashion Animada)
+                </div>
+
+
+                <div class="player">
+
+                    <span class="time" id="currentTime">
+                        0:00
+                    </span>
+
+
+                    <div
+                        class="progress-container"
+                        id="progressContainer"
+                    >
+                        <div
+                            class="progress"
+                            id="progress"
+                        ></div>
+
+                        <div
+                            class="progress-dot"
+                            id="progressDot"
+                        ></div>
+                    </div>
+
+
+                    <span class="time" id="duration">
+                        0:00
+                    </span>
+
+                </div>
+
+
+                <div class="music-controls">
+
+                    <button id="previousButton">
+                        ◀
+                    </button>
+
+                    <button
+                        id="playButton"
+                        class="play-button"
+                    >
+                        ▶
+                    </button>
+
+                    <button id="nextButton">
+                        ▶
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Separador -->
+
+            <div class="divider">
+                <span>✦</span>
+            </div>
+
+
+            <!-- =========================
+                 FAVORITE GAMES
+            ========================== -->
+
+            <section class="games-section">
+
+                <div class="section-title">
+                    <span>🎮</span>
+                    FAVOURITES
+                </div>
+
+
+                <div class="games-grid">
+
+                    <a
+                        href="#"
+                        class="game-card"
+                    >
+                        <img
+                            src="assets/games/Spider-man 2.avif"
+                            alt="Game 1"
+                        >
+
+                        <div class="game-overlay">
+                            <span>SPIDER MAN 2</span>
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="game-card"
+                    >
+                        <img
+                            src="assets/games/Counter strike 2.webp"
+                            alt="Game 2"
+                        >
+
+                        <div class="game-overlay">
+                            <span>Counter strike 2</span>
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="game-card"
+                    >
+                        <img
+                            src="assets/games/mortal kombat 11.avif"
+                            alt="Game 3"
+                        >
+
+                        <div class="game-overlay">
+                            <span>Mortal kombat 11</span>
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="game-card"
+                    >
+                        <img
+                            src="assets/games/Devil May Cry.jpg"
+                            alt="Game 4"
+                        >
+
+                        <div class="game-overlay">
+                            <span>Devil May Cry 5</span>
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="game-card"
+                    >
+                        <img
+                            src="assets/games/Hogwarts Legacy.jpg"
+                            alt="Game 5"
+                        >
+
+                        <div class="game-overlay">
+                            <span>Hogwarts Legacy</span>
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="game-card"
+                    >
+                        <img
+                            src="assets/games/Stellar Blade.webp"
+                            alt="Game 6"
+                        >
+
+                        <div class="game-overlay">
+                            <span>Stellar Blade™</span>
+                        </div>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- Separador -->
+
+            <div class="divider bottom-divider">
+                <span>✦</span>
+            </div>
+
+
+            <!-- =========================
+                 VIEWS
+            ========================== -->
+
+            <div class="views">
+
+                <span class="eye">
+                    ◉
+                </span>
+
+                <span id="views">
+                    1,284
+                </span>
+
+                <span>
+                    views
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         ÁUDIO
+    ========================== -->
+
+    <audio
+        id="audio"
+        src="assets/music.mp3"
+        preload="metadata"
+    ></audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
